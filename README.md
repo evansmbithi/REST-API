@@ -72,7 +72,7 @@ Delete a post where id=8
 
 - The DELETE method does not actually delete a resource. Rather moves it to trash "status": "trash"
 - Sending the same DELETE request returns a code "rest_already_trashed"
-- To completely delete the resource the force argument has to be passed as true to bypass Trash.
+- To completely delete the resource, use the force argument has to be passed as true to bypass Trash.
 
 <pre>
   DELETE http://dev.wordpress/wordpress/wp-json/wp/v2/posts/8?force=true
