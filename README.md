@@ -28,8 +28,9 @@ POST http://dev.wordpress/wp-json/wp/v2/posts
 Authorization: Basic maestro 123456
 Content-Type: application/json
 
-<code>
 <pre>
+<code>
+
 POST http://dev.wordpress/wp-json/wp/v2/posts
 Authorization: Basic maestro 123456
 Content-Type: application/json
@@ -40,5 +41,6 @@ Content-Type: application/json
   "status" : "publish",
   "author" : 1
 }
-</pre>
+
 </code>
+</pre>
