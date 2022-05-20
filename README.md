@@ -1,5 +1,9 @@
 # REST-API to manipulate wordpress posts
 
+<em>Install REST-client extension in vscode to send these requests</em>
+
+https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
 OPTIONS does not provide actual data but a detailed breakdown of all methods (GET/POST) and arguments (e.g pre_page -  maximum number of items to be returned in result set; we get maximum 10 posts; but we can change this number to something else).
 
 OPTIONS http://dev.wordpress/wp-json/wp/v2/posts
@@ -24,9 +28,13 @@ POST http://dev.wordpress/wp-json/wp/v2/posts
 Authorization: Basic maestro 123456
 Content-Type: application/json
 
+<code>
+<pre>
 {
   "title" : "Post created via a REST API",
   "content" : "This is the content of a post created via REST API",
   "status" : "publish",
   "author" : 1
 }
+</pre>
+</code>
