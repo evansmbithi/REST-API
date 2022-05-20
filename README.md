@@ -9,7 +9,7 @@ https://github.com/WP-API/Basic-Auth
 https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
 ## OPTIONS
-OPTIONS does not provide actual data but a detailed breakdown of all methods (GET/POST) and arguments (e.g per_page -  maximum number of items to be returned in result set; we get maximum 10 posts; but we can change this number to something else).
+OPTIONS does not provide actual data but a detailed breakdown of all methods (GET/POST) and arguments (e.g per_page -  maximum number of items to be returned in result set; we get maximum 10 posts. but we can change this number to something else).
 
 <pre>
   OPTIONS http://dev.wordpress/wp-json/wp/v2/posts
@@ -48,4 +48,33 @@ Create a new resource
       "author" : 1
     }
   </code>
+</pre>
+
+## PUT
+Allows one to make changes to a resource
+<pre>
+  PUT http://dev.wordpress/wp-json/wp/v2/posts/6
+  Authorization: Basic maestro 123456
+  Content-Type: application/json
+
+  {
+    "title" : "Post created (and updated) via a REST API"
+  }
+</pre>
+
+## DELETE
+Delete a post where id=8
+
+<pre>
+  DELETE http://dev.wordpress/wordpress/wp-json/wp/v2/posts/8
+  Authorization: Basic maestro 123456
+</pre>
+
+- The DELETE method does not actually delete a resource. Rather moves it to trash "status": "trash"
+- Sending the same DELETE request returns a code "rest_already_trashed"
+- To completely delete the resource the force argument has to be passed as true to bypass Trash.
+
+<pre>
+  DELETE http://dev.wordpress/wordpress/wp-json/wp/v2/posts/8?force=true
+  Authorization: Basic maestro 123456
 </pre>
