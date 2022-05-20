@@ -4,17 +4,23 @@
 
 https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
+OPTIONS
 OPTIONS does not provide actual data but a detailed breakdown of all methods (GET/POST) and arguments (e.g pre_page -  maximum number of items to be returned in result set; we get maximum 10 posts; but we can change this number to something else).
 
 <pre>
   OPTIONS http://dev.wordpress/wp-json/wp/v2/posts
   Authorization: Basic maestro 123456
 </pre>
+
+GET
 if we want the actual data from the posts resource, or the last 10 posts in this blog, we'll send a get request 
 display 0 posts per_page
 
-GET http://dev.wordpress/wp-json/wp/v2/posts?per_page=0
+<pre>
+  GET http://dev.wordpress/wp-json/wp/v2/posts?per_page=0
+</pre>
 
+POST
 Create a new resource
 * set up a POST request. 
 * add an authorization header 
