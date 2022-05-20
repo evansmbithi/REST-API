@@ -1,11 +1,15 @@
 # REST-API to manipulate wordpress posts
 
+<em>Install Basic Authentication pluggin in your wordpress website</em>
+
+https://github.com/WP-API/Basic-Auth
+
 <em>Install REST-client extension in vscode to send these requests</em>
 
 https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
 ## OPTIONS
-OPTIONS does not provide actual data but a detailed breakdown of all methods (GET/POST) and arguments (e.g pre_page -  maximum number of items to be returned in result set; we get maximum 10 posts; but we can change this number to something else).
+OPTIONS does not provide actual data but a detailed breakdown of all methods (GET/POST) and arguments (e.g per_page -  maximum number of items to be returned in result set; we get maximum 10 posts; but we can change this number to something else).
 
 <pre>
   OPTIONS http://dev.wordpress/wp-json/wp/v2/posts
