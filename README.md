@@ -29,18 +29,16 @@ Authorization: Basic maestro 123456
 Content-Type: application/json
 
 <pre>
-<code>
+  <code>
+    POST http://dev.wordpress/wp-json/wp/v2/posts
+    Authorization: Basic maestro 123456
+    Content-Type: application/json
 
-POST http://dev.wordpress/wp-json/wp/v2/posts
-Authorization: Basic maestro 123456
-Content-Type: application/json
-
-{
-  "title" : "Post created via a REST API",
-  "content" : "This is the content of a post created via REST API",
-  "status" : "publish",
-  "author" : 1
-}
-
-</code>
+    {
+      "title" : "Post created via a REST API",
+      "content" : "This is the content of a post created via REST API",
+      "status" : "publish",
+      "author" : 1
+    }
+  </code>
 </pre>
