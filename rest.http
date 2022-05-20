@@ -4,7 +4,7 @@
 # basic authentication with username and password
 # Authorization: Basic maestro 123456
 
-# OPTIONS does not provide actual data but a detailed breakdown of all methods (GET/POST) and arguments (e.g pre_page -  maximum number of items to be returned in result set; we get maximum 10 posts; but we can change this number to something else).
+# OPTIONS does not provide actual data but a detailed breakdown of all methods (GET/POST) and arguments (e.g per_page -  maximum number of items to be returned in result set; we get maximum 10 posts; but we can change this number to something else).
 
 # OPTIONS http://dev.wordpress/wp-json/wp/v2/posts
 # Authorization: Basic maestro 123456
@@ -15,7 +15,7 @@
 
 #  thanks to the hyper-media as the engine of application state constrained, each of these post objects carries with it its own resource link as well as the public link. So once we have a post object on a list like this we can use that post object to find a link directly to the post itself.   "_links": {
 
-# GET http://dev.wordpress/wp-json/wp/v2/posts?per_page=10
+# GET http://dev.wordpress/wp-json/wp/v2/pages/3
 # Authorization: Basic maestro 123456
 
 # Create a new resource
@@ -28,13 +28,36 @@
 # For the post to be public, indicate "status": "publish"
 # Author ID will automatically get attributed to the main owner of the site but can be defined, though not a requirement
 
-POST http://dev.wordpress/wp-json/wp/v2/posts
-Authorization: Basic maestro 123456
-Content-Type: application/json
+# POST http://dev.wordpress/wp-json/wp/v2/posts
+# Authorization: Basic maestro 123456
+# Content-Type: application/json
 
-{
-  "title" : "Post created via a REST API",
-  "content" : "This is the content of a post created via REST API",
-  "status" : "publish",
-  "author" : 1
-}
+# {
+#   "title" : "Post created via a REST API",
+#   "content" : "This is the content of a post created via REST API",
+#   "status" : "publish",
+#   "author" : 1
+# }
+
+# PUT
+# Allows one to make changes to a resource
+# PUT http://dev.wordpress/wp-json/wp/v2/posts/6
+# Authorization: Basic maestro 123456
+# Content-Type: application/json
+
+# {
+#   "title" : "Post created (and updated) via a REST API"
+# }
+
+# DELETE
+# Delete a post where id=8
+
+# DELETE http://dev.wordpress/wordpress/wp-json/wp/v2/posts/8
+# Authorization: Basic maestro 123456
+
+# The DELETE method does not actually delete a resource. Rather moves it to trash "status": "trash"
+# Sending the same DELETE request returns a code "rest_already_trashed"
+# To completely delete the resource the force argument has to be passed as true to bypass Trash.
+
+DELETE http://dev.wordpress/wordpress/wp-json/wp/v2/posts/8?force=true
+Authorization: Basic maestro 123456
