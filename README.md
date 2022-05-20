@@ -1,6 +1,6 @@
 # REST-API to manipulate wordpress posts
 
-<em>Install Basic Authentication pluggin in your wordpress website</em>
+<em>Install Basic Authentication plugin in your wordpress website</em>
 
 https://github.com/WP-API/Basic-Auth
 
